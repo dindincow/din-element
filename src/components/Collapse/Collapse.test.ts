@@ -9,29 +9,19 @@ import Icon from '@/components/Icon/Icon.vue'
 describe('Collapse.vue', () => {
 
 	test('测试基础结构以及对应文本', () => {
-		const qq = mount(()=>
-		<Collapse v-model="openedValue"></Collapse>,{
-			global:{
-				stubs:['FontAwesomeIcon'] /* mock 掉第三地方組件*/
-			}
-		})
-			
-
 		const wrapper = mount(Collapse, {
 			// 插槽内容
       slots: {
-        default:`
-					<CollapseItem name="a">
-						<template #title> 使用 SLOTE TITLE </template>
-						<div>這是內容A</div>
-					</CollapseItem>
-					<CollapseItem name="b" title="TITLEB">
-						<div>這是內容B</div>
-					</CollapseItem>
-					<CollapseItem name="c" title="TITLEC" disabled>
-						<div>這是內容C</div>
-					</CollapseItem>
-				`
+        default: 
+          <CollapseItem name="a" title="title a">
+            content a
+          </CollapseItem>
+          <CollapseItem name="b" title="title b">
+            content b
+          </CollapseItem>
+          <CollapseItem name="c" title="title c" disabled>
+            content c
+          </CollapseItem>
       },
 			global:{
 				stubs:['FontAwesomeIcon'] /* mock 掉第三地方組件*/
