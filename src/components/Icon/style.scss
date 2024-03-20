@@ -1,0 +1,17 @@
+.vk-icon {
+	--vk-icon-color: inherit;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	fill: currentColor;
+	color: var(--vk-icon-color);
+	font-size: inherit;
+}
+$types: primary, success, warning, info, danger;
+@each $val in $types {
+	.vk-icon--#{$val} {
+		--vk-icon-color: var(--vk-color-#{$val});
+	}
+}
+
